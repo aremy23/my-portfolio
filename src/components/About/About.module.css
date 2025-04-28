@@ -1,0 +1,51 @@
+.section {
+    position: relative;
+    z-index: 3;
+    padding: 100px 0;
+    background: transparent !important;
+  }
+  
+  .aboutContainer {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .profileImage {
+    flex: 0 0 300px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .profileImage img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .aboutContent {
+    flex: 1;
+  }
+  
+  .aboutItem {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .emoji {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .aboutContainer {
+      flex-direction: column;
+    }
+    
+    .profileImage {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
+  }

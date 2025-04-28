@@ -1,0 +1,76 @@
+.timeline {
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0.6) 0%, 
+      rgba(255, 255, 255, 0.2) 100%);
+  }
+  
+  .timelineItem {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+  }
+  
+  .timelineDot {
+    position: absolute;
+    left: -14px;
+    top: 5px;
+    width: 28px;
+    height: 28px;
+    background: var(--card-background);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .timelineContent {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+  }
+  
+  .timelineContent h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .timelineContent h4 {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+  
+  .date {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .timelineContent ul {
+    padding-left: 1.5rem;
+  }
+  
+  .timelineContent li {
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 20px;
+    }
+    
+    .timelineItem {
+      padding-left: 1.5rem;
+    }
+  }

@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import ThreeScene from './components/ThreeScene/ThreeScene';
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import './App.css';
 
 function App() {
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const handleLoaded = () => {
+    setLoadingProgress(100);
+    setIsLoaded(true);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThreeScene 
+        onLoaded={handleLoaded}
+        onProgress={setLoadingProgress}  // Make sure ThreeScene passes progress updates
+      />
+      <LoadingScreen progress={loadingProgress} />
+      
+      {isLoaded && (
+        <>
+          <Header />
+          <main>
+            <Hero />
+            {/* Add other sections */}
+          </main>
+        </>
+      )}
     </div>
   );
 }
